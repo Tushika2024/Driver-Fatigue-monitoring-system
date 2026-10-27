@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fatigue-monitor"
+version = "1.0.0"
+description = "Phone/laptop-deployable driver fatigue monitoring for vehicles without OEM driver monitoring"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy>=1.24",
+  "pandas>=2.0",
+  "scipy>=1.10",
+  "scikit-learn>=1.3",
+  "matplotlib>=3.7",
+  "pyyaml>=6.0",
+  "joblib>=1.3",
+  "opencv-python>=4.8",
+  "mediapipe>=0.10.14",
+]
+
+[project.optional-dependencies]
+tts = ["pyttsx3>=2.90"]
+api = ["fastapi>=0.110", "uvicorn[standard]>=0.29", "python-multipart>=0.0.9"]
+dev = ["pytest>=7.4", "httpx>=0.27"]
+
+[project.scripts]
+fatigue = "fatigue.cli:main"
+fatigue-api = "fatigue_api.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+fatigue = ["data/*.yaml"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

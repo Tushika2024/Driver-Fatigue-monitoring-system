@@ -1,0 +1,226 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297mm" viewBox="0 0 1600 1131">
+<style>
+text{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;fill:#2C2C2A}
+.title{font-size:34px;font-weight:600}
+.sub{font-size:16px;fill:#5F5E5A}
+.ph{font-size:19px;font-weight:600;fill:#3C3489}
+.bt{font-size:15px;font-weight:600}
+.bb{font-size:13px;fill:#444441}
+.al{font-size:12px;fill:#5F5E5A;font-style:italic}
+.nt{font-size:12.5px;fill:#444441}
+.nh{font-size:14px;font-weight:600;fill:#2C2C2A}
+.box{fill:#F7F6F3;stroke:#73726C;stroke-width:1}
+.proc{fill:#E6F1FB;stroke:#185FA5;stroke-width:1}
+.dec{fill:#EEEDFE;stroke:#534AB7;stroke-width:1}
+.drv{fill:#E1F5EE;stroke:#0F6E56;stroke-width:1.2}
+.dep{fill:#FAEEDA;stroke:#854F0B;stroke-width:1.2}
+.data{fill:#F1EFE8;stroke:#5F5E5A;stroke-width:1.4}
+.panel{fill:none;stroke:#B4B2A9;stroke-width:1;stroke-dasharray:5 4}
+.note{fill:#F1EFE8;stroke:#B4B2A9;stroke-width:1}
+.ar{stroke:#5F5E5A;stroke-width:1.4;fill:none;marker-end:url(#a)}
+.gl{stroke:#B4B2A9;stroke-width:0.8}
+.sl{stroke:#993C1D;stroke-width:2;fill:none}
+.thr{stroke:#A32D2D;stroke-width:1;stroke-dasharray:4 3}
+</style>
+<defs><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#5F5E5A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+
+<rect x="0" y="0" width="1600" height="1131" fill="#FFFFFF"/>
+<text class="title" x="40" y="48">D · Shift report — what the depot sees</text>
+<text class="sub" x="40" y="74">The driver is not the only user. Across drivers and weeks, the log becomes scheduling data — and rostering is the actual fix for fatigue.</text>
+<line x1="40" y1="96" x2="1560" y2="96" stroke="#B4B2A9" stroke-width="1"/>
+
+<rect class="panel" x="40" y="118" width="360" height="500" rx="8"/>
+<text class="ph" x="58" y="146">1 · From log to report</text>
+
+<rect class="data" x="70" y="166" width="300" height="66" rx="5"/>
+<text class="bt" x="220" y="190" text-anchor="middle">session_log.csv</text>
+<text class="bb" x="220" y="212" text-anchor="middle">one row every 3 seconds</text>
+<path class="ar" d="M220 232 L220 260"/>
+
+<rect class="proc" x="70" y="262" width="300" height="106" rx="5"/>
+<text class="bt" x="220" y="286" text-anchor="middle">AGGREGATE THE SHIFT</text>
+<text class="bb" x="92" y="312">· smooth the score to a trend line</text>
+<text class="bb" x="92" y="332">· find the worst continuous stretch</text>
+<text class="bb" x="92" y="352">· count alerts by level</text>
+<path class="ar" d="M220 368 L220 396"/>
+
+<rect class="dec" x="70" y="398" width="300" height="66" rx="5"/>
+<text class="bt" x="220" y="422" text-anchor="middle">Enough valid data?</text>
+<text class="bb" x="220" y="444" text-anchor="middle">&lt; 60% full mode → flag the report</text>
+
+<path class="ar" d="M220 464 L220 492"/>
+
+<rect class="box" x="70" y="494" width="300" height="86" rx="5"/>
+<text class="bt" x="220" y="518" text-anchor="middle">ONE-PAGE SHIFT REPORT</text>
+<text class="bb" x="220" y="542" text-anchor="middle">generated automatically at shift end</text>
+<text class="bb" x="220" y="562" text-anchor="middle">goes to driver and to depot</text>
+
+<path class="ar" d="M370 537 L416 537 L416 200 L456 200"/>
+
+<rect class="note" x="40" y="648" width="360" height="442" rx="8"/>
+<text class="nh" x="60" y="676">Two readers, two different documents</text>
+<text class="nt" x="60" y="704">The driver's copy is about today: how the shift went,</text>
+<text class="nt" x="60" y="722">when the hard stretch was, whether the breaks helped.</text>
+<text class="nt" x="60" y="740">It is feedback, not a report card.</text>
+<text class="nt" x="60" y="768">The depot's copy is about patterns across people and</text>
+<text class="nt" x="60" y="786">weeks. No individual driver is the subject — the</text>
+<text class="nt" x="60" y="804">roster is.</text>
+
+<text class="nh" x="60" y="844">Flag incomplete reports honestly</text>
+<text class="nt" x="60" y="872">A shift spent largely in degraded mode produced less</text>
+<text class="nt" x="60" y="890">information, not better numbers. If the system could</text>
+<text class="nt" x="60" y="908">not see the driver for half the drive, the report</text>
+<text class="nt" x="60" y="926">must say so rather than quietly reporting a low</text>
+<text class="nt" x="60" y="944">fatigue score that only means "no data".</text>
+
+<text class="nh" x="60" y="984">Privacy by construction</text>
+<text class="nt" x="60" y="1012">The log holds a profile label and numbers about blink</text>
+<text class="nt" x="60" y="1030">timing. No video is stored, no face is recognised,</text>
+<text class="nt" x="60" y="1048">nothing identifies a person. Fleet monitoring is often</text>
+<text class="nt" x="60" y="1066">resented; one that cannot identify anyone is different.</text>
+
+<rect class="panel" x="430" y="118" width="360" height="620" rx="8"/>
+<text class="ph" x="448" y="146">2 · The driver's page</text>
+
+<rect class="drv" x="456" y="166" width="304" height="206" rx="5"/>
+<text class="bt" x="608" y="190" text-anchor="middle">FATIGUE SCORE OVER THE SHIFT</text>
+<line class="gl" x1="482" y1="340" x2="736" y2="340"/>
+<line class="gl" x1="482" y1="212" x2="482" y2="340"/>
+<line class="thr" x1="482" y1="246" x2="736" y2="246"/>
+<text class="al" x="740" y="250">alert level</text>
+<path class="sl" d="M482 328 L510 324 L538 318 L566 322 L594 306 L622 292 L650 262 L678 240 L706 252 L736 268"/>
+<circle cx="678" cy="240" r="4" fill="#A32D2D"/>
+<text class="bb" x="482" y="360">06:00</text>
+<text class="bb" x="736" y="360" text-anchor="end">14:00</text>
+<path class="ar" d="M608 372 L608 400"/>
+
+<rect class="drv" x="456" y="402" width="304" height="126" rx="5"/>
+<text class="bt" x="608" y="426" text-anchor="middle">WORST STRETCH</text>
+<text class="bb" x="478" y="452">12:10 – 12:40, sustained above threshold</text>
+<text class="bb" x="478" y="474">Driven by blink reopen slowdown and</text>
+<text class="bb" x="478" y="492">three hand-to-face events.</text>
+<text class="bb" x="478" y="516">Recovered after the 12:45 stop.</text>
+<path class="ar" d="M608 528 L608 556"/>
+
+<rect class="drv" x="456" y="558" width="304" height="146" rx="5"/>
+<text class="bt" x="608" y="582" text-anchor="middle">ALERTS AND LEAD TIME</text>
+<text class="bb" x="478" y="608">mild</text><text class="bb" x="736" y="608" text-anchor="end">4</text>
+<text class="bb" x="478" y="630">moderate</text><text class="bb" x="736" y="630" text-anchor="end">2</text>
+<text class="bb" x="478" y="652">severe</text><text class="bb" x="736" y="652" text-anchor="end">0</text>
+<text class="bb" x="478" y="678">First early signal preceded the first</text>
+<text class="bb" x="478" y="696">late signal by 6 min 20 s.</text>
+
+<rect class="note" x="430" y="768" width="360" height="322" rx="8"/>
+<text class="nh" x="450" y="796">Feedback, not surveillance</text>
+<text class="nt" x="450" y="824">The driver sees their own page first, before anyone</text>
+<text class="nt" x="450" y="842">else does. That ordering matters for whether the</text>
+<text class="nt" x="450" y="860">system gets accepted or quietly sabotaged.</text>
+<text class="nt" x="450" y="888">Showing the lead time is the part drivers find</text>
+<text class="nt" x="450" y="906">persuasive. "The system noticed six minutes before</text>
+<text class="nt" x="450" y="924">you did" is a concrete demonstration that the early</text>
+<text class="nt" x="450" y="942">signals are real and not theatre.</text>
+
+<text class="nh" x="450" y="982">Show recovery, not just decline</text>
+<text class="nt" x="450" y="1010">Marking where a break brought the score back down</text>
+<text class="nt" x="450" y="1028">turns the report into something actionable. It also</text>
+<text class="nt" x="450" y="1046">gives you the beginnings of an answer to the question</text>
+<text class="nt" x="450" y="1064">nobody asks: does the intervention actually work?</text>
+
+<rect class="panel" x="820" y="118" width="360" height="620" rx="8"/>
+<text class="ph" x="838" y="146">3 · The depot's page</text>
+
+<rect class="dep" x="846" y="166" width="304" height="206" rx="5"/>
+<text class="bt" x="998" y="190" text-anchor="middle">FATIGUE EVENTS BY SHIFT SLOT</text>
+<line class="gl" x1="872" y1="340" x2="1126" y2="340"/>
+<rect x="884" y="308" width="38" height="32" fill="#C0DD97" stroke="#3B6D11" stroke-width="0.8"/>
+<rect x="934" y="300" width="38" height="40" fill="#C0DD97" stroke="#3B6D11" stroke-width="0.8"/>
+<rect x="984" y="284" width="38" height="56" fill="#FAC775" stroke="#854F0B" stroke-width="0.8"/>
+<rect x="1034" y="232" width="38" height="108" fill="#F7C1C1" stroke="#A32D2D" stroke-width="0.8"/>
+<rect x="1084" y="268" width="38" height="72" fill="#FAC775" stroke="#854F0B" stroke-width="0.8"/>
+<text class="bb" x="903" y="358" text-anchor="middle">06</text>
+<text class="bb" x="953" y="358" text-anchor="middle">10</text>
+<text class="bb" x="1003" y="358" text-anchor="middle">14</text>
+<text class="bb" x="1053" y="358" text-anchor="middle">02</text>
+<text class="bb" x="1103" y="358" text-anchor="middle">22</text>
+<path class="ar" d="M998 372 L998 400"/>
+
+<rect class="dep" x="846" y="402" width="304" height="126" rx="5"/>
+<text class="bt" x="998" y="426" text-anchor="middle">THE FINDING</text>
+<text class="bb" x="868" y="452">The 02:00 slot produces roughly three</text>
+<text class="bb" x="868" y="470">times the fatigue events of any other,</text>
+<text class="bb" x="868" y="488">across all drivers.</text>
+<text class="bb" x="868" y="512">That is a rostering problem, not a</text>
+<path class="ar" d="M998 528 L998 556"/>
+
+<rect class="dep" x="846" y="558" width="304" height="146" rx="5"/>
+<text class="bt" x="998" y="582" text-anchor="middle">ALSO VISIBLE</text>
+<text class="bb" x="868" y="608">· which routes produce the most events</text>
+<text class="bb" x="868" y="630">· whether back-to-back shifts compound</text>
+<text class="bb" x="868" y="652">· whether break length changes recovery</text>
+<text class="bb" x="868" y="676">· how often the system ran degraded,</text>
+<text class="bb" x="868" y="694">  i.e. where the data is weak</text>
+
+<rect class="note" x="820" y="768" width="360" height="322" rx="8"/>
+<text class="nh" x="840" y="796">This is where the real value sits</text>
+<text class="nt" x="840" y="824">An alert treats the symptom. The roster is the cause.</text>
+<text class="nt" x="840" y="852">A depot manager currently has no way to know that</text>
+<text class="nt" x="840" y="870">their 2am slot is three times worse than any other,</text>
+<text class="nt" x="840" y="888">because nobody measures fatigue systematically. Once</text>
+<text class="nt" x="840" y="906">they can see it, they can change the schedule — which</text>
+<text class="nt" x="840" y="924">prevents fatigue instead of warning about it.</text>
+
+<text class="nh" x="840" y="964">Aggregate, never rank individuals</text>
+<text class="nt" x="840" y="992">The depot view should be by slot, route and week —</text>
+<text class="nt" x="840" y="1010">not a leaderboard of drivers. A system that ranks</text>
+<text class="nt" x="840" y="1028">people by tiredness will be gamed within a week, and</text>
+<text class="nt" x="840" y="1046">the gaming will make the data useless. Design the</text>
+<text class="nt" x="840" y="1064">view so there is nothing to game.</text>
+
+<rect class="panel" x="1210" y="118" width="350" height="620" rx="8"/>
+<text class="ph" x="1228" y="146">4 · Build cost</text>
+
+<rect class="proc" x="1236" y="166" width="300" height="126" rx="5"/>
+<text class="bt" x="1386" y="190" text-anchor="middle">WHAT IT TAKES</text>
+<text class="bb" x="1256" y="216">pandas to group the log</text>
+<text class="bb" x="1256" y="238">matplotlib for two charts</text>
+<text class="bb" x="1256" y="260">a Markdown or HTML template</text>
+<text class="bb" x="1256" y="282">Roughly two days.</text>
+
+<rect class="box" x="1236" y="312" width="300" height="146" rx="5"/>
+<text class="bt" x="1386" y="336" text-anchor="middle">WHAT IT GIVES THE PROJECT</text>
+<text class="bb" x="1256" y="362">· a second thing to show in the demo</text>
+<text class="bb" x="1256" y="384">  besides the alarm going off</text>
+<text class="bb" x="1256" y="408">· a reason the system is worth</text>
+<text class="bb" x="1256" y="430">  deploying, not just worth building</text>
+<text class="bb" x="1256" y="452">· a report section nobody else has</text>
+
+<rect class="dec" x="1236" y="478" width="300" height="126" rx="5"/>
+<text class="bt" x="1386" y="502" text-anchor="middle">HONEST LIMITATION</text>
+<text class="bb" x="1256" y="528">RLDD gives you ten-minute clips, not</text>
+<text class="bb" x="1256" y="548">eight-hour shifts. You can build and</text>
+<text class="bb" x="1256" y="568">demonstrate the report, but you cannot</text>
+<text class="bb" x="1256" y="588">validate the slot findings. Say so.</text>
+
+<rect class="box" x="1236" y="624" width="300" height="86" rx="5"/>
+<text class="bt" x="1386" y="648" text-anchor="middle">DEMO WORKAROUND</text>
+<text class="bb" x="1256" y="674">Concatenate clips into a synthetic</text>
+<text class="bb" x="1256" y="694">"shift" and label it as synthetic.</text>
+
+<rect class="note" x="1210" y="768" width="350" height="322" rx="8"/>
+<text class="nh" x="1230" y="796">What to claim and what not to</text>
+<text class="nt" x="1230" y="824">Claim: the system produces a shift report, and the</text>
+<text class="nt" x="1230" y="842">aggregation is demonstrated on synthetic shifts built</text>
+<text class="nt" x="1230" y="860">from the dataset.</text>
+<text class="nt" x="1230" y="888">Do not claim: that the 2am finding is real. You have</text>
+<text class="nt" x="1230" y="906">no overnight fleet data, and inventing the number</text>
+<text class="nt" x="1230" y="924">would be the one thing that sinks an otherwise</text>
+<text class="nt" x="1230" y="942">honest project.</text>
+<text class="nt" x="1230" y="970">Present the depot page as a designed capability with</text>
+<text class="nt" x="1230" y="988">illustrative data, clearly marked. That is a normal</text>
+<text class="nt" x="1230" y="1006">and respectable thing to do, and an examiner will</text>
+<text class="nt" x="1230" y="1024">read it as scope awareness rather than a gap.</text>
+<text class="nt" x="1230" y="1052">Validating it on real fleet data goes in future work.</text>
+
+<line x1="40" y1="1104" x2="1560" y2="1104" stroke="#B4B2A9" stroke-width="1"/>
+<text class="al" x="40" y="1122">D · Shift report · phone-deployable driver fatigue monitoring · A3 landscape</text>
+</svg>

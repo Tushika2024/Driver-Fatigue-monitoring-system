@@ -1,0 +1,19 @@
+# NEVER commit the dataset or derived per-frame data
+data/
+videos/
+*.mp4
+*.avi
+*.mov
+features*.csv
+# model files downloaded at first run
+models/*.task
+*.task
+# outputs
+runs/
+results/
+demo/
+__pycache__/
+*.egg-info/
+.pytest_cache/
+.venv/
+*.joblib

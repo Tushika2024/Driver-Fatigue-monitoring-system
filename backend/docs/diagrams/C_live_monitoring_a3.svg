@@ -1,0 +1,239 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297mm" viewBox="0 0 1600 1131">
+<style>
+text{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;fill:#2C2C2A}
+.title{font-size:34px;font-weight:600}
+.sub{font-size:16px;fill:#5F5E5A}
+.ph{font-size:19px;font-weight:600;fill:#3C3489}
+.bt{font-size:15px;font-weight:600}
+.bb{font-size:13px;fill:#444441}
+.al{font-size:12px;fill:#5F5E5A;font-style:italic}
+.nt{font-size:12.5px;fill:#444441}
+.nh{font-size:14px;font-weight:600;fill:#2C2C2A}
+.box{fill:#F7F6F3;stroke:#73726C;stroke-width:1}
+.proc{fill:#E6F1FB;stroke:#185FA5;stroke-width:1}
+.dec{fill:#EEEDFE;stroke:#534AB7;stroke-width:1}
+.early{fill:#E1F5EE;stroke:#0F6E56;stroke-width:1.2}
+.late{fill:#FAECE7;stroke:#993C1D;stroke-width:1.2}
+.mild{fill:#EAF3DE;stroke:#3B6D11;stroke-width:1.2}
+.mod{fill:#FAEEDA;stroke:#854F0B;stroke-width:1.2}
+.sev{fill:#FCEBEB;stroke:#A32D2D;stroke-width:1.2}
+.degr{fill:#F1EFE8;stroke:#5F5E5A;stroke-width:1.2;stroke-dasharray:5 3}
+.panel{fill:none;stroke:#B4B2A9;stroke-width:1;stroke-dasharray:5 4}
+.note{fill:#F1EFE8;stroke:#B4B2A9;stroke-width:1}
+.ar{stroke:#5F5E5A;stroke-width:1.4;fill:none;marker-end:url(#a)}
+</style>
+<defs><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#5F5E5A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+
+<rect x="0" y="0" width="1600" height="1131" fill="#FFFFFF"/>
+<text class="title" x="40" y="48">C · Live monitoring — the loop that runs while driving</text>
+<text class="sub" x="40" y="74">Runs continuously on a phone or laptop. Two signal streams, graded response, fails visibly rather than silently.</text>
+<line x1="40" y1="96" x2="1560" y2="96" stroke="#B4B2A9" stroke-width="1"/>
+
+<rect class="panel" x="40" y="118" width="360" height="560" rx="8"/>
+<text class="ph" x="58" y="146">1 · Capture and perception</text>
+
+<rect class="box" x="70" y="166" width="300" height="46" rx="5"/>
+<text class="bt" x="220" y="195" text-anchor="middle">Camera frame · 30 FPS</text>
+<path class="ar" d="M220 212 L220 240"/>
+
+<rect class="proc" x="70" y="242" width="300" height="66" rx="5"/>
+<text class="bt" x="220" y="266" text-anchor="middle">Load driver profile</text>
+<text class="bb" x="220" y="288" text-anchor="middle">or begin adaptive baseline</text>
+<path class="ar" d="M220 308 L220 336"/>
+
+<rect class="proc" x="70" y="338" width="300" height="66" rx="5"/>
+<text class="bt" x="220" y="362" text-anchor="middle">MediaPipe</text>
+<text class="bb" x="220" y="384" text-anchor="middle">face 468 + pose 33 landmarks</text>
+<path class="ar" d="M220 404 L220 432"/>
+
+<rect class="dec" x="70" y="434" width="300" height="66" rx="5"/>
+<text class="bt" x="220" y="458" text-anchor="middle">Eye landmarks reliable?</text>
+<text class="bb" x="220" y="480" text-anchor="middle">confidence over recent window</text>
+
+<path class="ar" d="M220 500 L220 516 L145 516 L145 540"/>
+<path class="ar" d="M220 500 L220 516 L295 516 L295 540"/>
+<text class="al" x="128" y="534" text-anchor="end">yes</text>
+<text class="al" x="314" y="534">no</text>
+
+<rect class="box" x="82" y="542" width="126" height="86" rx="5"/>
+<text class="bt" x="145" y="566" text-anchor="middle">FULL MODE</text>
+<text class="bb" x="145" y="590" text-anchor="middle">eyes + head</text>
+<text class="bb" x="145" y="608" text-anchor="middle">+ posture</text>
+
+<rect class="degr" x="232" y="542" width="126" height="86" rx="5"/>
+<text class="bt" x="295" y="566" text-anchor="middle">DEGRADED</text>
+<text class="bb" x="295" y="586" text-anchor="middle">head + posture</text>
+<text class="bb" x="295" y="604" text-anchor="middle">announce it,</text>
+<text class="bb" x="295" y="622" text-anchor="middle">widen threshold</text>
+
+<path class="ar" d="M145 628 L145 650 L416 650 L416 300 L456 300"/>
+<path class="ar" d="M295 628 L295 650"/>
+
+<rect class="note" x="40" y="708" width="360" height="382" rx="8"/>
+<text class="nh" x="60" y="736">Degraded mode is the safety argument</text>
+<text class="nt" x="60" y="764">Sunglasses, glare on glasses, a head turned to check</text>
+<text class="nt" x="60" y="782">a mirror — the eye measurements become garbage.</text>
+<text class="nt" x="60" y="800">Most systems keep emitting confident output anyway.</text>
+<text class="nt" x="60" y="828">A system that says "I cannot see your eyes" is safe.</text>
+<text class="nt" x="60" y="846">One that says "you are fine" because it cannot see</text>
+<text class="nt" x="60" y="864">your eyes is dangerous. Say exactly that in the report.</text>
+
+<text class="nh" x="60" y="904">Where posture earns its place</text>
+<text class="nt" x="60" y="932">Blinks evolve over seconds. Postural slump evolves</text>
+<text class="nt" x="60" y="950">over minutes. Two channels on different timescales,</text>
+<text class="nt" x="60" y="968">so posture is both a slower early warning and the</text>
+<text class="nt" x="60" y="986">fallback when the eyes are unavailable.</text>
+
+<text class="nh" x="60" y="1026">Share the code with the offline path</text>
+<text class="nt" x="60" y="1054">If live.py computes features even slightly differently</text>
+<text class="nt" x="60" y="1072">from extract_features.py, the demo stops matching</text>
+
+<rect class="panel" x="430" y="118" width="360" height="620" rx="8"/>
+<text class="ph" x="448" y="146">2 · Scoring, two streams</text>
+
+<rect class="proc" x="456" y="166" width="304" height="66" rx="5"/>
+<text class="bt" x="608" y="190" text-anchor="middle">Rolling 3-second window</text>
+<text class="bb" x="608" y="212" text-anchor="middle">updated every 1.5 seconds</text>
+
+<path class="ar" d="M608 232 L608 248 L530 248 L530 272"/>
+<path class="ar" d="M608 232 L608 248 L686 248 L686 272"/>
+
+<rect class="early" x="464" y="274" width="132" height="146" rx="5"/>
+<text class="bt" x="530" y="298" text-anchor="middle">EARLY</text>
+<text class="bb" x="530" y="318" text-anchor="middle">fighting sleep</text>
+<text class="bb" x="478" y="346">· blink reopen</text>
+<text class="bb" x="478" y="364">  slowdown</text>
+<text class="bb" x="478" y="386">· hand to face</text>
+<text class="bb" x="478" y="408">· head shake</text>
+
+<rect class="late" x="620" y="274" width="132" height="146" rx="5"/>
+<text class="bt" x="686" y="298" text-anchor="middle">LATE</text>
+<text class="bb" x="686" y="318" text-anchor="middle">losing the fight</text>
+<text class="bb" x="634" y="346">· PERCLOS</text>
+<text class="bb" x="634" y="368">· long closure</text>
+<text class="bb" x="634" y="390">· head drop</text>
+
+<path class="ar" d="M530 420 L530 442 L608 442 L608 466"/>
+<path class="ar" d="M686 420 L686 442 L608 442"/>
+
+<rect class="proc" x="456" y="468" width="304" height="66" rx="5"/>
+<text class="bt" x="608" y="492" text-anchor="middle">Classifier → score 0 to 1</text>
+<text class="bb" x="608" y="514" text-anchor="middle">z-scored against this driver</text>
+<path class="ar" d="M608 534 L608 562"/>
+
+<rect class="dec" x="456" y="564" width="304" height="86" rx="5"/>
+<text class="bt" x="608" y="588" text-anchor="middle">SUSTAINED?</text>
+<text class="bb" x="608" y="610" text-anchor="middle">high across N consecutive windows</text>
+<text class="bb" x="608" y="630" text-anchor="middle">hysteresis on the way back down</text>
+
+<path class="ar" d="M456 607 L410 607 L410 680 L608 680 L608 656" stroke-dasharray="4 3"/>
+<text class="al" x="420" y="698">no → log and continue</text>
+
+<path class="ar" d="M760 607 L806 607 L806 200 L846 200"/>
+<text class="al" x="770" y="598">yes</text>
+
+<rect class="note" x="430" y="768" width="360" height="322" rx="8"/>
+<text class="nh" x="450" y="796">Why two streams, not one score</text>
+<text class="nt" x="450" y="824">Early signals alone mean the driver has noticed they</text>
+<text class="nt" x="450" y="842">are struggling and is compensating. A gentle nudge is</text>
+<text class="nt" x="450" y="860">the right response — they are still in control.</text>
+<text class="nt" x="450" y="888">Late signals mean compensation has stopped working.</text>
+<text class="nt" x="450" y="906">That is when you get loud.</text>
+<text class="nt" x="450" y="934">Existing systems only have the late stream, which is</text>
+<text class="nt" x="450" y="952">why they can only ever shout, and only once it is</text>
+<text class="nt" x="450" y="970">nearly too late to matter.</text>
+
+<text class="nh" x="450" y="1010">Hysteresis is not optional</text>
+<text class="nt" x="450" y="1038">Without it the alert flickers on and off around the</text>
+<text class="nt" x="450" y="1056">threshold. Drivers respond to that by switching the</text>
+<text class="nt" x="450" y="1074">whole system off, which makes accuracy irrelevant.</text>
+
+<rect class="panel" x="820" y="118" width="360" height="700" rx="8"/>
+<text class="ph" x="838" y="146">3 · Graded intervention</text>
+
+<rect class="mild" x="846" y="166" width="304" height="116" rx="5"/>
+<text class="bt" x="868" y="190">MILD — early signals only</text>
+<text class="bb" x="868" y="216">Soft chime, no speech.</text>
+<text class="bb" x="868" y="238">The driver is compensating and still</text>
+<text class="bb" x="868" y="256">in control. A nudge, not a telling-off.</text>
+<text class="bb" x="868" y="274">Does not reach the patient compartment.</text>
+<path class="ar" d="M998 282 L998 306"/>
+
+<rect class="mod" x="846" y="308" width="304" height="136" rx="5"/>
+<text class="bt" x="868" y="332">MODERATE — early + late</text>
+<text class="bb" x="868" y="358">Spoken prompt, stating the reason:</text>
+<text class="bb" x="868" y="382">"Your blinks have been reopening 35%</text>
+<text class="bb" x="868" y="400">slower for the last two minutes."</text>
+<text class="bb" x="868" y="424">Low volume, private channel.</text>
+<path class="ar" d="M998 444 L998 468"/>
+
+<rect class="sev" x="846" y="470" width="304" height="116" rx="5"/>
+<text class="bt" x="868" y="494">SEVERE — late, sustained</text>
+<text class="bb" x="868" y="520">Firm, repeated voice.</text>
+<text class="bb" x="868" y="542">"Pull over at the next safe place."</text>
+<text class="bb" x="868" y="564">Escalates until acknowledged.</text>
+
+<path class="ar" d="M998 586 L998 614"/>
+
+<rect class="proc" x="846" y="616" width="304" height="116" rx="5"/>
+<text class="bt" x="998" y="640" text-anchor="middle">TWO-PERSON CREW?</text>
+<text class="bb" x="868" y="666">Ambulances carry a paramedic who can</text>
+<text class="bb" x="868" y="686">drive. Trucks often carry a co-driver.</text>
+<text class="bb" x="868" y="710">"Suggest handover at the next stop."</text>
+
+<path class="ar" d="M1150 674 L1196 674 L1196 300 L1236 300"/>
+
+<rect class="note" x="820" y="848" width="360" height="242" rx="8"/>
+<text class="nh" x="840" y="876">Why not simply a loud alarm</text>
+<text class="nt" x="840" y="904">An ambulance has a patient in the back, possibly</text>
+<text class="nt" x="840" y="922">critical, and paramedics working on them. The cabin</text>
+<text class="nt" x="840" y="940">is already saturated with sirens, monitors and radio.</text>
+<text class="nt" x="840" y="958">One more alarm is textbook alarm fatigue.</text>
+<text class="nt" x="840" y="986">Same for a cab with a sleeping passenger, or a car</text>
+<text class="nt" x="840" y="1004">with a child asleep in the back.</text>
+<text class="nt" x="840" y="1032">In a two-person crew the right output is advice to</text>
+<text class="nt" x="840" y="1050">the team, not a reprimand to one individual. That is</text>
+<text class="nt" x="840" y="1068">a better intervention than any alert.</text>
+
+<rect class="panel" x="1210" y="118" width="350" height="700" rx="8"/>
+<text class="ph" x="1228" y="146">4 · Output and logging</text>
+
+<rect class="proc" x="1236" y="166" width="300" height="126" rx="5"/>
+<text class="bt" x="1386" y="190" text-anchor="middle">OUTPUT CHANNEL</text>
+<text class="bb" x="1256" y="216">One interface: emit(level, reason)</text>
+<text class="bb" x="1256" y="240">· demo — laptop speaker</text>
+<text class="bb" x="1256" y="260">· general vehicle — headrest speaker</text>
+<text class="bb" x="1256" y="280">· shared cabin — single earpiece</text>
+<path class="ar" d="M1386 292 L1386 320"/>
+
+<rect class="dec" x="1236" y="322" width="300" height="86" rx="5"/>
+<text class="bt" x="1386" y="346" text-anchor="middle">Channel available?</text>
+<text class="bb" x="1256" y="372">If the private channel is disconnected,</text>
+<text class="bb" x="1256" y="392">fall back to cabin audio and say so.</text>
+<path class="ar" d="M1386 408 L1386 436"/>
+
+<rect class="box" x="1236" y="438" width="300" height="106" rx="5"/>
+<text class="bt" x="1386" y="462" text-anchor="middle">LOG EVERY WINDOW</text>
+<text class="bb" x="1256" y="488">timestamp · score · stream · level fired</text>
+<text class="bb" x="1256" y="510">· mode (full / degraded)</text>
+<text class="bb" x="1256" y="530">· whether the driver responded</text>
+<path class="ar" d="M1386 544 L1386 572"/>
+
+<rect class="box" x="1236" y="574" width="300" height="46" rx="5"/>
+<text class="bt" x="1386" y="603" text-anchor="middle">session_log.csv → sheet D</text>
+
+<rect class="note" x="1210" y="848" width="350" height="242" rx="8"/>
+<text class="nh" x="1230" y="876">The log is not an afterthought</text>
+<text class="nt" x="1230" y="904">It is what makes the shift report possible, and the</text>
+<text class="nt" x="1230" y="922">shift report is what turns a detector into something</text>
+<text class="nt" x="1230" y="940">a fleet would actually deploy.</text>
+<text class="nt" x="1230" y="968">Log the mode as well as the score. A stretch spent</text>
+<text class="nt" x="1230" y="986">in degraded mode is not the same as a stretch of</text>
+<text class="nt" x="1230" y="1004">confident alertness, and the report should say so.</text>
+<text class="nt" x="1230" y="1032">Log whether the driver responded, too. That is the</text>
+<text class="nt" x="1230" y="1050">only way to ever answer whether the alert worked —</text>
+<text class="nt" x="1230" y="1068">a question nobody in this field currently asks.</text>
+
+<line x1="40" y1="1104" x2="1560" y2="1104" stroke="#B4B2A9" stroke-width="1"/>
+<text class="al" x="40" y="1122">C · Live monitoring · phone-deployable driver fatigue monitoring · A3 landscape</text>
+</svg>

@@ -1,0 +1,263 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297mm" viewBox="0 0 1600 1131">
+<style>
+text{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;fill:#2C2C2A}
+.title{font-size:34px;font-weight:600}
+.sub{font-size:16px;fill:#5F5E5A}
+.ph{font-size:19px;font-weight:600;fill:#3C3489}
+.bt{font-size:15px;font-weight:600}
+.bb{font-size:13px;fill:#444441}
+.al{font-size:12px;fill:#5F5E5A;font-style:italic}
+.nt{font-size:12.5px;fill:#444441}
+.nh{font-size:14px;font-weight:600;fill:#2C2C2A}
+.box{fill:#F7F6F3;stroke:#73726C;stroke-width:1}
+.proc{fill:#E6F1FB;stroke:#185FA5;stroke-width:1}
+.dec{fill:#EEEDFE;stroke:#534AB7;stroke-width:1}
+.fit{fill:#EAF3DE;stroke:#3B6D11;stroke-width:1.2}
+.caut{fill:#FAEEDA;stroke:#854F0B;stroke-width:1.2}
+.unfit{fill:#FCEBEB;stroke:#A32D2D;stroke-width:1.2}
+.warn{fill:#FAECE7;stroke:#993C1D;stroke-width:1}
+.panel{fill:none;stroke:#B4B2A9;stroke-width:1;stroke-dasharray:5 4}
+.note{fill:#F1EFE8;stroke:#B4B2A9;stroke-width:1}
+.ar{stroke:#5F5E5A;stroke-width:1.4;fill:none;marker-end:url(#a)}
+</style>
+<defs><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#5F5E5A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+
+<rect x="0" y="0" width="1600" height="1131" fill="#FFFFFF"/>
+<text class="title" x="40" y="48">Pre-trip fitness check — complete workflow</text>
+<text class="sub" x="40" y="74">A 60-second check before the shift starts. Same pipeline as live monitoring, run once instead of continuously.</text>
+<line x1="40" y1="96" x2="1560" y2="96" stroke="#B4B2A9" stroke-width="1"/>
+
+<rect class="panel" x="40" y="118" width="360" height="416" rx="8"/>
+<text class="ph" x="58" y="146">1 · First run — no history yet</text>
+
+<rect class="box" x="70" y="166" width="300" height="46" rx="5"/>
+<text class="bt" x="220" y="195" text-anchor="middle">New driver opens the app</text>
+<path class="ar" d="M220 212 L220 240"/>
+
+<rect class="proc" x="70" y="242" width="300" height="66" rx="5"/>
+<text class="bt" x="220" y="266" text-anchor="middle">ENROLMENT MODE</text>
+<text class="bb" x="220" y="288" text-anchor="middle">60-second capture, stored as reference</text>
+<path class="ar" d="M220 308 L220 336"/>
+
+<rect class="box" x="70" y="338" width="300" height="46" rx="5"/>
+<text class="bt" x="220" y="367" text-anchor="middle">Saved as session #1</text>
+<path class="ar" d="M220 384 L220 412"/>
+
+<rect class="caut" x="70" y="414" width="300" height="86" rx="5"/>
+<text class="bt" x="220" y="440" text-anchor="middle">No verdict given</text>
+<text class="bb" x="220" y="462" text-anchor="middle">"Baseline recorded. Fitness scoring</text>
+<text class="bb" x="220" y="480" text-anchor="middle">begins after 3 sessions."</text>
+
+<rect class="panel" x="40" y="554" width="360" height="536" rx="8"/>
+<text class="ph" x="58" y="582">5 · Failure paths</text>
+
+<rect class="warn" x="70" y="600" width="300" height="44" rx="5"/>
+<text class="bt" x="86" y="620">Face not found</text>
+<text class="bb" x="86" y="637">Retry with on-screen guidance</text>
+
+<rect class="warn" x="70" y="654" width="300" height="44" rx="5"/>
+<text class="bt" x="86" y="674">Sunglasses detected</text>
+<text class="bb" x="86" y="691">"Remove eyewear for the check"</text>
+
+<rect class="warn" x="70" y="708" width="300" height="44" rx="5"/>
+<text class="bt" x="86" y="728">Poor lighting</text>
+<text class="bb" x="86" y="745">Retry; cabin light or reposition</text>
+
+<rect class="warn" x="70" y="762" width="300" height="44" rx="5"/>
+<text class="bt" x="86" y="782">Too few blinks captured</text>
+<text class="bb" x="86" y="799">Extend to 90s, then give up</text>
+
+<rect class="warn" x="70" y="816" width="300" height="58" rx="5"/>
+<text class="bt" x="86" y="836">Readings far outside profile</text>
+<text class="bb" x="86" y="853">"Profile may not match — confirm</text>
+<text class="bb" x="86" y="868">driver selected." Not identification.</text>
+
+<path class="ar" d="M220 874 L220 902"/>
+
+<rect class="unfit" x="70" y="904" width="300" height="118" rx="5"/>
+<text class="bt" x="220" y="928" text-anchor="middle">ANY FAILURE → INCONCLUSIVE</text>
+<text class="bb" x="86" y="952">· Do NOT store in history</text>
+<text class="bb" x="86" y="972">· Do NOT block the shift</text>
+<text class="bb" x="86" y="992">· Live monitoring still runs normally</text>
+<text class="bb" x="86" y="1012">· INCONCLUSIVE is never NOT FIT</text>
+
+<rect class="panel" x="430" y="118" width="360" height="618" rx="8"/>
+<text class="ph" x="448" y="146">2 · Normal run — the capture</text>
+
+<rect class="box" x="460" y="166" width="300" height="46" rx="5"/>
+<text class="bt" x="610" y="195" text-anchor="middle">Driver sits, phone on mount</text>
+<path class="ar" d="M610 212 L610 240"/>
+
+<rect class="dec" x="460" y="242" width="300" height="66" rx="5"/>
+<text class="bt" x="610" y="266" text-anchor="middle">QUALITY GATE</text>
+<text class="bb" x="610" y="288" text-anchor="middle">Face found · lighting · framing</text>
+<text class="al" x="770" y="282" text-anchor="start">fail</text>
+<path class="ar" d="M760 275 L800 275 L800 640 L372 640" stroke-dasharray="4 3"/>
+<path class="ar" d="M610 308 L610 336"/>
+
+<rect class="proc" x="460" y="338" width="300" height="76" rx="5"/>
+<text class="bt" x="610" y="362" text-anchor="middle">60-SECOND CAPTURE</text>
+<text class="bb" x="610" y="384" text-anchor="middle">0–10s discarded (settling)</text>
+<text class="bb" x="610" y="402" text-anchor="middle">10–60s measured</text>
+<path class="ar" d="M610 414 L610 442"/>
+
+<rect class="proc" x="460" y="444" width="300" height="122" rx="5"/>
+<text class="bt" x="610" y="468" text-anchor="middle">EXTRACT 4 MEASURES</text>
+<text class="bb" x="482" y="492">1 · Blink reopen duration</text>
+<text class="bb" x="482" y="512">2 · Blink rate</text>
+<text class="bb" x="482" y="532">3 · Baseline eye openness</text>
+<text class="bb" x="482" y="552">4 · Head micro-movement</text>
+<path class="ar" d="M610 566 L610 594"/>
+
+<rect class="dec" x="460" y="596" width="300" height="86" rx="5"/>
+<text class="bt" x="610" y="620" text-anchor="middle">BLINK COUNT GATE — need ≥ 8</text>
+<text class="bb" x="610" y="642" text-anchor="middle">Too few → extend to 90s</text>
+<text class="bb" x="610" y="662" text-anchor="middle">Still too few → INCONCLUSIVE</text>
+
+<path class="ar" d="M760 639 L816 639"/>
+<text class="al" x="770" y="630">pass</text>
+
+<rect class="note" x="430" y="762" width="360" height="328" rx="8"/>
+<text class="nh" x="450" y="790">Why these thresholds</text>
+<text class="nt" x="450" y="818">First 10 seconds discarded</text>
+<text class="nt" x="450" y="838">People blink hard and shift position when a</text>
+<text class="nt" x="450" y="856">camera starts. That settling is not fatigue.</text>
+<text class="nt" x="450" y="888">Minimum 8 blinks</text>
+<text class="nt" x="450" y="908">Blink shape is the main signal, and four blinks</text>
+<text class="nt" x="450" y="926">is not a distribution. Someone who barely blinks</text>
+<text class="nt" x="450" y="944">gives no usable reading — say so, don't guess.</text>
+<text class="nt" x="450" y="976">Reopen speed weighted highest</text>
+<text class="nt" x="450" y="996">A driver can force their eyes wide for a camera.</text>
+<text class="nt" x="450" y="1014">They cannot consciously speed up how fast a</text>
+<text class="nt" x="450" y="1032">lid returns. It is the least gameable measure.</text>
+<text class="nt" x="450" y="1064">Failures route to panel 5 →</text>
+
+<rect class="panel" x="820" y="118" width="360" height="836" rx="8"/>
+<text class="ph" x="838" y="146">3 · How the verdict is made</text>
+
+<rect class="box" x="850" y="166" width="300" height="66" rx="5"/>
+<text class="bt" x="1000" y="190" text-anchor="middle">Driver's stored history</text>
+<text class="bb" x="1000" y="212" text-anchor="middle">median + IQR of each measure</text>
+<path class="ar" d="M1000 232 L1000 260"/>
+
+<rect class="proc" x="850" y="262" width="300" height="60" rx="5"/>
+<text class="bt" x="1000" y="286" text-anchor="middle">z = (today − median) / IQR</text>
+<text class="bb" x="1000" y="306" text-anchor="middle">computed for all 4 measures</text>
+<path class="ar" d="M1000 322 L1000 350"/>
+
+<rect class="proc" x="850" y="352" width="300" height="130" rx="5"/>
+<text class="bt" x="1000" y="376" text-anchor="middle">WEIGHTED FATIGUE INDEX</text>
+<text class="bb" x="876" y="402">Blink reopen speed</text><text class="bb" x="1124" y="402" text-anchor="end">0.40</text>
+<text class="bb" x="876" y="424">Baseline eye openness</text><text class="bb" x="1124" y="424" text-anchor="end">0.25</text>
+<text class="bb" x="876" y="446">Blink rate</text><text class="bb" x="1124" y="446" text-anchor="end">0.20</text>
+<text class="bb" x="876" y="468">Head micro-movement</text><text class="bb" x="1124" y="468" text-anchor="end">0.15</text>
+<path class="ar" d="M1000 482 L1000 510"/>
+
+<rect class="dec" x="850" y="512" width="300" height="44" rx="5"/>
+<text class="bt" x="1000" y="540" text-anchor="middle">Index value?</text>
+
+<path class="ar" d="M1000 556 L1000 572 L895 572 L895 596"/>
+<path class="ar" d="M1000 556 L1000 596"/>
+<path class="ar" d="M1000 556 L1000 572 L1105 572 L1105 596"/>
+<text class="al" x="872" y="590" text-anchor="end">&lt; 1.0</text>
+<text class="al" x="1128" y="590">&gt; 2.0</text>
+
+<rect class="fit" x="850" y="598" width="90" height="118" rx="5"/>
+<text class="bt" x="895" y="624" text-anchor="middle">FIT</text>
+<text class="bb" x="895" y="650" text-anchor="middle">Go</text>
+<text class="bb" x="895" y="670" text-anchor="middle">Normal</text>
+<text class="bb" x="895" y="688" text-anchor="middle">monitoring</text>
+
+<rect class="caut" x="955" y="598" width="90" height="118" rx="5"/>
+<text class="bt" x="1000" y="624" text-anchor="middle">CAUTION</text>
+<text class="bb" x="1000" y="650" text-anchor="middle">Monitor from</text>
+<text class="bb" x="1000" y="668" text-anchor="middle">the start,</text>
+<text class="bb" x="1000" y="686" text-anchor="middle">lower alert</text>
+<text class="bb" x="1000" y="704" text-anchor="middle">threshold</text>
+
+<rect class="unfit" x="1060" y="598" width="90" height="118" rx="5"/>
+<text class="bt" x="1105" y="624" text-anchor="middle">NOT FIT</text>
+<text class="bb" x="1105" y="650" text-anchor="middle">Suggest</text>
+<text class="bb" x="1105" y="668" text-anchor="middle">handover</text>
+<text class="bb" x="1105" y="686" text-anchor="middle">or rest</text>
+
+<path class="ar" d="M895 716 L895 740 L1000 740 L1000 762"/>
+<path class="ar" d="M1105 716 L1105 740 L1000 740"/>
+<path class="ar" d="M1000 716 L1000 762"/>
+
+<rect class="proc" x="850" y="764" width="300" height="84" rx="5"/>
+<text class="bt" x="1000" y="788" text-anchor="middle">ALWAYS SHOW THE REASON</text>
+<text class="bb" x="1000" y="812" text-anchor="middle">"Your blinks are reopening 35% slower</text>
+<text class="bb" x="1000" y="830" text-anchor="middle">than your typical shift start"</text>
+<path class="ar" d="M1000 848 L1000 876"/>
+
+<rect class="box" x="850" y="878" width="300" height="46" rx="5"/>
+<text class="bt" x="1000" y="907" text-anchor="middle">Append session to history</text>
+
+<path class="ar" d="M1150 901 L1206 901 L1206 700"/>
+
+<rect class="note" x="820" y="980" width="360" height="110" rx="8"/>
+<text class="nh" x="840" y="1008">NOT FIT is advisory, never a lockout</text>
+<text class="nt" x="840" y="1034">A system that can stop someone working will be</text>
+<text class="nt" x="840" y="1052">gamed, disabled, or have a colleague sit in front</text>
+<text class="nt" x="840" y="1070">of it. Advisory keeps it trusted and keeps it honest.</text>
+
+<rect class="panel" x="1210" y="118" width="350" height="580" rx="8"/>
+<text class="ph" x="1228" y="146">4 · The history store</text>
+
+<rect class="box" x="1238" y="166" width="294" height="66" rx="5"/>
+<text class="bt" x="1385" y="190" text-anchor="middle">Each session appended</text>
+<text class="bb" x="1385" y="212" text-anchor="middle">date · time · 4 measures · index · verdict</text>
+<path class="ar" d="M1385 232 L1385 260"/>
+
+<rect class="dec" x="1238" y="262" width="294" height="44" rx="5"/>
+<text class="bt" x="1385" y="290" text-anchor="middle">≥ 3 sessions stored?</text>
+
+<path class="ar" d="M1385 306 L1385 322 L1300 322 L1300 346"/>
+<path class="ar" d="M1385 306 L1385 322 L1470 322 L1470 346"/>
+<text class="al" x="1280" y="340" text-anchor="end">no</text>
+<text class="al" x="1490" y="340">yes</text>
+
+<rect class="caut" x="1238" y="348" width="124" height="66" rx="5"/>
+<text class="bt" x="1300" y="372" text-anchor="middle">No verdict</text>
+<text class="bb" x="1300" y="394" text-anchor="middle">"Learning your</text>
+<text class="bb" x="1300" y="410" text-anchor="middle">baseline"</text>
+
+<rect class="proc" x="1408" y="348" width="124" height="66" rx="5"/>
+<text class="bt" x="1470" y="372" text-anchor="middle">Median + IQR</text>
+<text class="bb" x="1470" y="394" text-anchor="middle">from the last</text>
+<text class="bb" x="1470" y="410" text-anchor="middle">30 sessions</text>
+<path class="ar" d="M1470 414 L1470 430 L1385 430 L1385 454"/>
+
+<rect class="proc" x="1238" y="456" width="294" height="84" rx="5"/>
+<text class="bt" x="1385" y="480" text-anchor="middle">TIME-OF-DAY SPLIT</text>
+<text class="bb" x="1385" y="504" text-anchor="middle">Compare a 2am start against past</text>
+<text class="bb" x="1385" y="522" text-anchor="middle">2am starts, not against 9am starts</text>
+<path class="ar" d="M1385 540 L1385 568"/>
+
+<rect class="dec" x="1238" y="570" width="294" height="66" rx="5"/>
+<text class="bt" x="1385" y="594" text-anchor="middle">≥ 3 sessions in that slot?</text>
+<text class="bb" x="1385" y="616" text-anchor="middle">Yes → slot history · No → overall history</text>
+<path class="ar" d="M1385 636 L1385 660 L1206 660"/>
+
+<rect class="note" x="1210" y="724" width="350" height="366" rx="8"/>
+<text class="nh" x="1230" y="752">Design decisions</text>
+<text class="nt" x="1230" y="780">Rolling window of 30, not all history</text>
+<text class="nt" x="1230" y="798">People change — new glasses, new sleep pattern,</text>
+<text class="nt" x="1230" y="816">a different vehicle. A baseline from two years ago</text>
+<text class="nt" x="1230" y="834">is no longer them.</text>
+<text class="nt" x="1230" y="866">Time-of-day matching is not optional</text>
+<text class="nt" x="1230" y="884">Everyone is slower at 2am. Comparing a night start</text>
+<text class="nt" x="1230" y="902">to a morning baseline would flag every night driver</text>
+<text class="nt" x="1230" y="920">as unfit, every night. Compare like with like.</text>
+<text class="nt" x="1230" y="952">A failed check never stores</text>
+<text class="nt" x="1230" y="970">One bad reading polluting the baseline would corrupt</text>
+<text class="nt" x="1230" y="988">every future verdict — and invisibly.</text>
+<text class="nt" x="1230" y="1020">No face recognition</text>
+<text class="nt" x="1230" y="1038">Driver identity comes from manual profile selection.</text>
+<text class="nt" x="1230" y="1056">The outlier check notices inconsistent readings; it</text>
+<text class="nt" x="1230" y="1074">does not identify anyone. No biometrics are stored.</text>
+
+<line x1="40" y1="1104" x2="1560" y2="1104" stroke="#B4B2A9" stroke-width="1"/>
+<text class="al" x="40" y="1122">Pre-trip fitness check · phone-deployable driver fatigue monitoring · A3 landscape</text>
+</svg>

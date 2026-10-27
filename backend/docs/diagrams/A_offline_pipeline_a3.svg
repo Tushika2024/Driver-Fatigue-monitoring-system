@@ -1,0 +1,219 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297mm" viewBox="0 0 1600 1131">
+<style>
+text{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;fill:#2C2C2A}
+.title{font-size:34px;font-weight:600}
+.sub{font-size:16px;fill:#5F5E5A}
+.ph{font-size:19px;font-weight:600;fill:#3C3489}
+.bt{font-size:15px;font-weight:600}
+.bb{font-size:13px;fill:#444441}
+.al{font-size:12px;fill:#5F5E5A;font-style:italic}
+.nt{font-size:12.5px;fill:#444441}
+.nh{font-size:14px;font-weight:600;fill:#2C2C2A}
+.box{fill:#F7F6F3;stroke:#73726C;stroke-width:1}
+.proc{fill:#E6F1FB;stroke:#185FA5;stroke-width:1}
+.dec{fill:#EEEDFE;stroke:#534AB7;stroke-width:1}
+.new{fill:#E1F5EE;stroke:#0F6E56;stroke-width:1.2}
+.data{fill:#F1EFE8;stroke:#5F5E5A;stroke-width:1.4}
+.out{fill:#FAEEDA;stroke:#854F0B;stroke-width:1.2}
+.panel{fill:none;stroke:#B4B2A9;stroke-width:1;stroke-dasharray:5 4}
+.note{fill:#F1EFE8;stroke:#B4B2A9;stroke-width:1}
+.ar{stroke:#5F5E5A;stroke-width:1.4;fill:none;marker-end:url(#a)}
+</style>
+<defs><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#5F5E5A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+
+<rect x="0" y="0" width="1600" height="1131" fill="#FFFFFF"/>
+<text class="title" x="40" y="48">A · Offline pipeline — building and testing the model</text>
+<text class="sub" x="40" y="74">Run once, mostly overnight. Turns 24 GB of video into a few thousand rows, then into the result graphs.</text>
+<rect class="new" x="1340" y="28" width="220" height="30" rx="5"/>
+<text class="bb" x="1450" y="48" text-anchor="middle">green = new in this version</text>
+<line x1="40" y1="96" x2="1560" y2="96" stroke="#B4B2A9" stroke-width="1"/>
+
+<rect class="panel" x="40" y="118" width="360" height="520" rx="8"/>
+<text class="ph" x="58" y="146">1 · Input and perception</text>
+
+<rect class="box" x="70" y="166" width="300" height="66" rx="5"/>
+<text class="bt" x="220" y="190" text-anchor="middle">UTA-RLDD videos</text>
+<text class="bb" x="220" y="212" text-anchor="middle">12 people · alert + drowsy only</text>
+<path class="ar" d="M220 232 L220 260"/>
+
+<rect class="proc" x="70" y="262" width="300" height="86" rx="5"/>
+<text class="bt" x="220" y="286" text-anchor="middle">MediaPipe</text>
+<text class="bb" x="220" y="308" text-anchor="middle">Face 468 landmarks + Pose 33</text>
+<text class="bb" x="220" y="328" text-anchor="middle">sampled at 30 FPS</text>
+<path class="ar" d="M220 348 L220 376"/>
+
+<rect class="proc" x="70" y="378" width="300" height="156" rx="5"/>
+<text class="bt" x="220" y="402" text-anchor="middle">PER-FRAME FEATURES</text>
+<text class="bb" x="92" y="428">eyes</text><text class="bb" x="180" y="428">EAR left, EAR right</text>
+<text class="bb" x="92" y="450">mouth</text><text class="bb" x="180" y="450">MAR, jawOpen</text>
+<text class="bb" x="92" y="472">head</text><text class="bb" x="180" y="472">pitch, yaw, roll</text>
+<text class="bb" x="92" y="494">posture</text><text class="bb" x="180" y="494">shoulder ratio, tilt</text>
+<text class="bb" x="92" y="516">hands</text><text class="bb" x="180" y="516">wrist position</text>
+<path class="ar" d="M220 534 L220 562"/>
+
+<rect class="data" x="70" y="564" width="300" height="46" rx="5"/>
+<text class="bt" x="220" y="593" text-anchor="middle">features.csv — one row per frame</text>
+
+<path class="ar" d="M370 587 L416 587 L416 180 L456 180"/>
+<path class="ar" d="M416 420 L456 420"/>
+
+<rect class="note" x="40" y="668" width="360" height="422" rx="8"/>
+<text class="nh" x="60" y="696">Why 30 FPS and not 10</text>
+<text class="nt" x="60" y="724">Blink reopening speed is the main new signal, and a</text>
+<text class="nt" x="60" y="742">blink lasts 100–400 ms. At 10 FPS a whole blink is</text>
+<text class="nt" x="60" y="760">three or four frames — you can see that it happened</text>
+<text class="nt" x="60" y="778">but not its shape. At 30 FPS you can.</text>
+<text class="nt" x="60" y="796">This is a methodological decision you can defend,</text>
+<text class="nt" x="60" y="814">not a detail. Cost: 3× the extraction time.</text>
+
+<text class="nh" x="60" y="854">Why pose landmarks now matter</text>
+<text class="nt" x="60" y="882">Compensatory behaviour needs hands. A wrist entering</text>
+<text class="nt" x="60" y="900">the face region is how you detect eye-rubbing and</text>
+<text class="nt" x="60" y="918">face-touching, which are arousal behaviours — the</text>
+<text class="nt" x="60" y="936">driver already knows they are losing it.</text>
+
+<text class="nh" x="60" y="976">Keep no-face frames, with a flag</text>
+<text class="nt" x="60" y="1004">Count them before dropping them. The rate of</text>
+<text class="nt" x="60" y="1022">detection failure per subject is the evidence that</text>
+<text class="nt" x="60" y="1040">justifies degraded mode in the live system. Drop</text>
+<text class="nt" x="60" y="1058">them first and that evidence is gone.</text>
+
+<rect class="panel" x="430" y="118" width="360" height="700" rx="8"/>
+<text class="ph" x="448" y="146">2 · Feature engineering</text>
+
+<rect class="new" x="456" y="166" width="304" height="140" rx="5"/>
+<text class="bt" x="608" y="190" text-anchor="middle">BLINK EXTRACTOR</text>
+<text class="bb" x="608" y="212" text-anchor="middle">segment each individual blink</text>
+<text class="bb" x="478" y="240">· closing duration</text>
+<text class="bb" x="478" y="260">· closed duration</text>
+<text class="bb" x="478" y="280">· reopening duration</text>
+<text class="bb" x="478" y="300">· closing / reopening asymmetry</text>
+
+<rect class="new" x="456" y="334" width="304" height="140" rx="5"/>
+<text class="bt" x="608" y="358" text-anchor="middle">BEHAVIOUR DETECTOR</text>
+<text class="bb" x="608" y="380" text-anchor="middle">compensatory arousal actions</text>
+<text class="bb" x="478" y="408">· hand to face / eye rubbing</text>
+<text class="bb" x="478" y="428">· sharp head shake</text>
+<text class="bb" x="478" y="448">· postural shift, stretch</text>
+<text class="bb" x="478" y="468">· hard deliberate blink</text>
+
+<path class="ar" d="M608 306 L608 326"/>
+<path class="ar" d="M608 474 L608 502"/>
+
+<rect class="proc" x="456" y="504" width="304" height="178" rx="5"/>
+<text class="bt" x="608" y="528" text-anchor="middle">WINDOW INTO 3 SECONDS</text>
+<text class="bb" x="608" y="550" text-anchor="middle">stride 1.5 s, so windows overlap</text>
+<text class="bb" x="478" y="578">LATE signals</text>
+<text class="bb" x="478" y="598">· PERCLOS</text>
+<text class="bb" x="478" y="618">· longest closure, head drop</text>
+<text class="bb" x="478" y="648">EARLY signals</text>
+<text class="bb" x="478" y="668">· reopen slowdown · event count · L–R divergence</text>
+<path class="ar" d="M608 682 L608 710"/>
+
+<rect class="data" x="456" y="712" width="304" height="46" rx="5"/>
+<text class="bt" x="608" y="741" text-anchor="middle">windows.csv — one row per 3 s</text>
+
+<path class="ar" d="M760 735 L806 735 L806 200 L846 200"/>
+
+<rect class="note" x="430" y="848" width="360" height="242" rx="8"/>
+<text class="nh" x="450" y="876">The two-stream split is the point</text>
+<text class="nt" x="450" y="904">Late signals say the driver is falling asleep — by</text>
+<text class="nt" x="450" y="922">then it is nearly too late to be useful.</text>
+<text class="nt" x="450" y="950">Early signals say the driver is fighting to stay</text>
+<text class="nt" x="450" y="968">awake. That happens first, and it is visible without</text>
+<text class="nt" x="450" y="986">any new sensor.</text>
+<text class="nt" x="450" y="1014">RLDD has no labels for compensatory behaviour. Either</text>
+<text class="nt" x="450" y="1032">hand-annotate a subset (a few hundred clips, one</text>
+<text class="nt" x="450" y="1050">afternoon across four people) or use them unsupervised</text>
+<text class="nt" x="450" y="1068">and show they improve classification. Say which.</text>
+
+<rect class="panel" x="820" y="118" width="360" height="600" rx="8"/>
+<text class="ph" x="838" y="146">3 · Modelling</text>
+
+<rect class="dec" x="846" y="166" width="304" height="86" rx="5"/>
+<text class="bt" x="998" y="190" text-anchor="middle">SPLIT BY PERSON</text>
+<text class="bb" x="998" y="212" text-anchor="middle">leave-one-person-out · 12 folds</text>
+<text class="bb" x="998" y="232" text-anchor="middle">no face in both train and test</text>
+<path class="ar" d="M998 252 L998 280"/>
+
+<rect class="new" x="846" y="282" width="304" height="130" rx="5"/>
+<text class="bt" x="998" y="306" text-anchor="middle">ADAPTIVE BASELINE</text>
+<text class="bb" x="998" y="328" text-anchor="middle">replaces fixed 60 s enrolment</text>
+<text class="bb" x="868" y="356">Running high percentile of this driver's</text>
+<text class="bb" x="868" y="376">own history so far — "the most alert</text>
+<text class="bb" x="868" y="396">they have been." No alertness assumed.</text>
+<path class="ar" d="M998 412 L998 440"/>
+
+<rect class="proc" x="846" y="442" width="304" height="76" rx="5"/>
+<text class="bt" x="998" y="466" text-anchor="middle">CLASSIFIER</text>
+<text class="bb" x="998" y="488" text-anchor="middle">logistic regression · kept simple</text>
+<text class="bb" x="998" y="508" text-anchor="middle">12 people cannot support more</text>
+<path class="ar" d="M998 518 L998 546"/>
+
+<rect class="data" x="846" y="548" width="304" height="66" rx="5"/>
+<text class="bt" x="998" y="572" text-anchor="middle">results.csv</text>
+<text class="bb" x="998" y="594" text-anchor="middle">per person · per method · per metric</text>
+
+<path class="ar" d="M1150 581 L1196 581 L1196 200 L1236 200"/>
+
+<rect class="note" x="820" y="748" width="360" height="342" rx="8"/>
+<text class="nh" x="840" y="776">Adaptive baseline kills the old weakness</text>
+<text class="nt" x="840" y="804">Fixed enrolment assumed the first 60 seconds were</text>
+<text class="nt" x="840" y="822">alert. That is false for exactly the people who matter</text>
+<text class="nt" x="840" y="840">most — the ambulance driver starting a night shift,</text>
+<text class="nt" x="840" y="858">the trucker on hour nine.</text>
+<text class="nt" x="840" y="886">The experiment that proves it: deliberately enrol on</text>
+<text class="nt" x="840" y="904">a subject's drowsy video, simulating a driver who</text>
+<text class="nt" x="840" y="922">starts tired. The enrolment method collapses. The</text>
+<text class="nt" x="840" y="940">adaptive one holds up.</text>
+
+<text class="nh" x="840" y="980">Split by person, always</text>
+<text class="nt" x="840" y="1008">Frames 1.5 s apart are near-identical. Shuffle them</text>
+<text class="nt" x="840" y="1026">and the model recognises the person, not the</text>
+<text class="nt" x="840" y="1044">drowsiness. Run it the wrong way once, deliberately,</text>
+<text class="nt" x="840" y="1062">and report the gap — it is a result in itself.</text>
+
+<rect class="panel" x="1210" y="118" width="350" height="600" rx="8"/>
+<text class="ph" x="1228" y="146">4 · Evaluation outputs</text>
+
+<rect class="out" x="1236" y="166" width="300" height="106" rx="5"/>
+<text class="bt" x="1386" y="190" text-anchor="middle">EARLINESS — the headline</text>
+<text class="bb" x="1256" y="216">Seconds of lead time before the first</text>
+<text class="bb" x="1256" y="236">unambiguous microsleep in each video.</text>
+<text class="bb" x="1256" y="258">"Same accuracy, 47 s earlier warning."</text>
+
+<rect class="out" x="1236" y="292" width="300" height="86" rx="5"/>
+<text class="bt" x="1386" y="316" text-anchor="middle">Per-subject accuracy</text>
+<text class="bb" x="1256" y="342">One point per person, two methods.</text>
+<text class="bb" x="1256" y="362">Report the spread, not just the mean.</text>
+
+<rect class="out" x="1236" y="398" width="300" height="86" rx="5"/>
+<text class="bt" x="1386" y="422" text-anchor="middle">Fairness slice</text>
+<text class="bb" x="1256" y="448">Glasses vs no glasses: accuracy, TPR,</text>
+<text class="bb" x="1256" y="468">false alarm rate. Before and after.</text>
+
+<rect class="out" x="1236" y="504" width="300" height="106" rx="5"/>
+<text class="bt" x="1386" y="528" text-anchor="middle">Ablations</text>
+<text class="bb" x="1256" y="554">· early signals removed</text>
+<text class="bb" x="1256" y="574">· blink shape vs PERCLOS only</text>
+<text class="bb" x="1256" y="594">· adaptive vs fixed enrolment</text>
+
+<rect class="note" x="1210" y="748" width="350" height="342" rx="8"/>
+<text class="nh" x="1230" y="776">Why earliness replaces accuracy</text>
+<text class="nt" x="1230" y="804">Two methods can score identically on accuracy while</text>
+<text class="nt" x="1230" y="822">one warns 47 seconds sooner. For a safety system</text>
+<text class="nt" x="1230" y="840">that difference is everything, and the field has</text>
+<text class="nt" x="1230" y="858">not been measuring it.</text>
+<text class="nt" x="1230" y="886">It also makes the early-signal work measurable.</text>
+<text class="nt" x="1230" y="904">Without an earliness metric, compensatory behaviour</text>
+<text class="nt" x="1230" y="922">detection has no way to show its value.</text>
+
+<text class="nh" x="1230" y="962">Everything plots from results.csv</text>
+<text class="nt" x="1230" y="990">Write it once, plot from it many times. Every figure</text>
+<text class="nt" x="1230" y="1008">and table in the report should be regenerable by</text>
+<text class="nt" x="1230" y="1026">running plots.py. If a number is questioned in the</text>
+<text class="nt" x="1230" y="1044">viva, you can reproduce it on the spot.</text>
+
+<line x1="40" y1="1104" x2="1560" y2="1104" stroke="#B4B2A9" stroke-width="1"/>
+<text class="al" x="40" y="1122">A · Offline pipeline · phone-deployable driver fatigue monitoring · A3 landscape</text>
+</svg>

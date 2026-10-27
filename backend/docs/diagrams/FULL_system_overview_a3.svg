@@ -1,0 +1,250 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297mm" viewBox="0 0 1600 1131">
+<style>
+text{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;fill:#2C2C2A}
+.title{font-size:32px;font-weight:600}
+.sub{font-size:15px;fill:#5F5E5A}
+.ph{font-size:18px;font-weight:600;fill:#3C3489}
+.pn{font-size:12px;fill:#5F5E5A}
+.bt{font-size:14px;font-weight:600}
+.bb{font-size:12px;fill:#444441}
+.al{font-size:11px;fill:#5F5E5A;font-style:italic}
+.nt{font-size:12px;fill:#444441}
+.nh{font-size:13.5px;font-weight:600;fill:#2C2C2A}
+.box{fill:#F7F6F3;stroke:#73726C;stroke-width:1}
+.proc{fill:#E6F1FB;stroke:#185FA5;stroke-width:1}
+.dec{fill:#EEEDFE;stroke:#534AB7;stroke-width:1}
+.new{fill:#E1F5EE;stroke:#0F6E56;stroke-width:1.2}
+.data{fill:#F1EFE8;stroke:#5F5E5A;stroke-width:1.4}
+.mild{fill:#EAF3DE;stroke:#3B6D11;stroke-width:1.2}
+.mod{fill:#FAEEDA;stroke:#854F0B;stroke-width:1.2}
+.sev{fill:#FCEBEB;stroke:#A32D2D;stroke-width:1.2}
+.degr{fill:#F1EFE8;stroke:#5F5E5A;stroke-width:1.2;stroke-dasharray:5 3}
+.fut{fill:#F7F6F3;stroke:#73726C;stroke-width:1.2;stroke-dasharray:6 4}
+.panel{fill:none;stroke:#B4B2A9;stroke-width:1.2;stroke-dasharray:6 4}
+.note{fill:#F1EFE8;stroke:#B4B2A9;stroke-width:1}
+.ar{stroke:#5F5E5A;stroke-width:1.4;fill:none;marker-end:url(#a)}
+.big{stroke:#3C3489;stroke-width:2.2;fill:none;marker-end:url(#b)}
+</style>
+<defs>
+<marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#5F5E5A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
+<marker id="b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#3C3489" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>
+</defs>
+
+<rect x="0" y="0" width="1600" height="1131" fill="#FFFFFF"/>
+<text class="title" x="40" y="44">Phone-deployable driver fatigue monitoring — complete system</text>
+<text class="sub" x="40" y="68">Mercedes and Tesla solve drowsiness detection for people who buy Mercedes and Teslas. The trucks, ambulances and cabs doing fourteen-hour runs have nothing — but every</text>
+<text class="sub" x="40" y="86">driver already owns a phone with a front camera. And every system in this field assumes a loud alarm is the right response, which is false in most commercial cabins.</text>
+<line x1="40" y1="100" x2="1560" y2="100" stroke="#B4B2A9" stroke-width="1"/>
+
+<rect class="panel" x="40" y="114" width="1520" height="52" rx="8" fill="#FAFAF8"/>
+<text class="ph" x="58" y="146">OFFLINE · built once</text>
+<text class="pn" x="228" y="146">sheet A</text>
+
+<rect class="box" x="296" y="126" width="118" height="30" rx="4"/>
+<text class="bb" x="355" y="146" text-anchor="middle">RLDD videos</text>
+<path class="ar" d="M414 141 L438 141"/>
+<rect class="proc" x="440" y="126" width="126" height="30" rx="4"/>
+<text class="bb" x="503" y="146" text-anchor="middle">MediaPipe 30fps</text>
+<path class="ar" d="M566 141 L590 141"/>
+<rect class="new" x="592" y="126" width="150" height="30" rx="4"/>
+<text class="bb" x="667" y="146" text-anchor="middle">blink + behaviour</text>
+<path class="ar" d="M742 141 L766 141"/>
+<rect class="proc" x="768" y="126" width="124" height="30" rx="4"/>
+<text class="bb" x="830" y="146" text-anchor="middle">3-sec windows</text>
+<path class="ar" d="M892 141 L916 141"/>
+<rect class="dec" x="918" y="126" width="132" height="30" rx="4"/>
+<text class="bb" x="984" y="146" text-anchor="middle">split by person</text>
+<path class="ar" d="M1050 141 L1074 141"/>
+<rect class="proc" x="1076" y="126" width="112" height="30" rx="4"/>
+<text class="bb" x="1132" y="146" text-anchor="middle">classifier</text>
+<path class="ar" d="M1188 141 L1212 141"/>
+<rect class="data" x="1214" y="126" width="126" height="30" rx="4"/>
+<text class="bb" x="1277" y="146" text-anchor="middle">trained model</text>
+<path class="ar" d="M1340 141 L1364 141"/>
+<rect class="mod" x="1366" y="126" width="130" height="30" rx="4"/>
+<text class="bb" x="1431" y="146" text-anchor="middle">earliness result</text>
+
+<path class="big" d="M1277 156 L1277 180 L420 180 L420 212"/>
+<text class="al" x="430" y="196">the trained model ships into the vehicle →</text>
+
+<rect class="panel" x="40" y="212" width="440" height="486" rx="8"/>
+<text class="ph" x="58" y="240">BEFORE THE SHIFT</text>
+<text class="pn" x="238" y="240">pre-trip check</text>
+
+<rect class="box" x="68" y="258" width="384" height="36" rx="5"/>
+<text class="bt" x="260" y="282" text-anchor="middle">Driver selects profile, sits at the phone</text>
+<path class="ar" d="M260 294 L260 316"/>
+
+<rect class="proc" x="68" y="318" width="384" height="54" rx="5"/>
+<text class="bt" x="260" y="340" text-anchor="middle">60-SECOND CAPTURE</text>
+<text class="bb" x="260" y="360" text-anchor="middle">first 10 s discarded · needs ≥ 8 blinks</text>
+<path class="ar" d="M260 372 L260 394"/>
+
+<rect class="proc" x="68" y="396" width="384" height="72" rx="5"/>
+<text class="bt" x="260" y="418" text-anchor="middle">COMPARE TO THIS DRIVER'S HISTORY</text>
+<text class="bb" x="260" y="438" text-anchor="middle">median + IQR of last 30 sessions, matched by time of day</text>
+<text class="bb" x="260" y="458" text-anchor="middle">weighted index · blink reopen speed carries 0.40</text>
+
+<path class="ar" d="M260 468 L260 484 L146 484 L146 506"/>
+<path class="ar" d="M260 468 L260 506"/>
+<path class="ar" d="M260 468 L260 484 L374 484 L374 506"/>
+
+<rect class="mild" x="88" y="508" width="116" height="70" rx="5"/>
+<text class="bt" x="146" y="530" text-anchor="middle">FIT</text>
+<text class="bb" x="146" y="550" text-anchor="middle">go, normal</text>
+<text class="bb" x="146" y="566" text-anchor="middle">monitoring</text>
+
+<rect class="mod" x="202" y="508" width="116" height="70" rx="5"/>
+<text class="bt" x="260" y="530" text-anchor="middle">CAUTION</text>
+<text class="bb" x="260" y="550" text-anchor="middle">lower alert</text>
+<text class="bb" x="260" y="566" text-anchor="middle">threshold</text>
+
+<rect class="sev" x="316" y="508" width="116" height="70" rx="5"/>
+<text class="bt" x="374" y="530" text-anchor="middle">NOT FIT</text>
+<text class="bb" x="374" y="550" text-anchor="middle">suggest swap</text>
+<text class="bb" x="374" y="566" text-anchor="middle">advisory only</text>
+
+<rect class="degr" x="68" y="600" width="384" height="72" rx="5"/>
+<text class="bt" x="260" y="622" text-anchor="middle">INCONCLUSIVE</text>
+<text class="bb" x="260" y="642" text-anchor="middle">no face, sunglasses, too few blinks → not stored, not a verdict</text>
+<text class="bb" x="260" y="662" text-anchor="middle">never treated as NOT FIT · the shift is never blocked</text>
+
+<path class="big" d="M480 430 L518 430"/>
+
+<rect class="panel" x="520" y="212" width="540" height="486" rx="8"/>
+<text class="ph" x="538" y="240">DURING THE DRIVE</text>
+<text class="pn" x="718" y="240">live monitoring · sheet C</text>
+
+<rect class="proc" x="548" y="258" width="484" height="54" rx="5"/>
+<text class="bt" x="790" y="280" text-anchor="middle">CAMERA → MEDIAPIPE → 3-SECOND WINDOW</text>
+<text class="bb" x="790" y="300" text-anchor="middle">adaptive baseline, no enrolment assumed</text>
+
+<path class="ar" d="M790 312 L790 326 L686 326 L686 348"/>
+<path class="ar" d="M790 312 L790 326 L894 326 L894 348"/>
+
+<rect class="new" x="592" y="350" width="188" height="98" rx="5"/>
+<text class="bt" x="686" y="372" text-anchor="middle">EARLY — fighting sleep</text>
+<text class="bb" x="608" y="394">· blink reopening slower</text>
+<text class="bb" x="608" y="414">· hand to face, eye rubbing</text>
+<text class="bb" x="608" y="434">· sharp head shake, stretch</text>
+
+<rect class="box" x="800" y="350" width="188" height="98" rx="5"/>
+<text class="bt" x="894" y="372" text-anchor="middle">LATE — losing it</text>
+<text class="bb" x="816" y="394">· PERCLOS rising</text>
+<text class="bb" x="816" y="414">· long eye closures</text>
+<text class="bb" x="816" y="434">· head drop</text>
+
+<path class="ar" d="M686 448 L686 464 L790 464 L790 484"/>
+<path class="ar" d="M894 448 L894 464 L790 464"/>
+
+<rect class="dec" x="548" y="486" width="484" height="54" rx="5"/>
+<text class="bt" x="790" y="508" text-anchor="middle">SUSTAINED ACROSS WINDOWS?</text>
+<text class="bb" x="790" y="528" text-anchor="middle">persistence + hysteresis, so one blink does nothing</text>
+<path class="ar" d="M790 540 L790 562"/>
+
+<rect class="new" x="548" y="564" width="484" height="62" rx="5"/>
+<text class="bt" x="790" y="586" text-anchor="middle">CABIN CONTEXT DECIDES THE CHANNEL</text>
+<text class="bb" x="790" y="606" text-anchor="middle">others present? · second driver? · is overhearing harmful?</text>
+<text class="bb" x="790" y="620" text-anchor="middle">see sheet E</text>
+
+<rect class="degr" x="548" y="640" width="484" height="40" rx="5"/>
+<text class="bb" x="790" y="665" text-anchor="middle">eyes not visible → head + posture only, announced, threshold widened</text>
+
+<path class="big" d="M1060 430 L1098 430"/>
+
+<rect class="panel" x="1100" y="212" width="460" height="486" rx="8"/>
+<text class="ph" x="1118" y="240">THE WARNING</text>
+<text class="pn" x="1248" y="240">two axes · sheet E</text>
+
+<rect class="mild" x="1128" y="258" width="404" height="58" rx="5"/>
+<text class="bt" x="1146" y="280">MILD · early signals only</text>
+<text class="bb" x="1146" y="302">truck: soft chime in cabin   ·   ambulance: private chime</text>
+<path class="ar" d="M1330 316 L1330 336"/>
+
+<rect class="mod" x="1128" y="338" width="404" height="58" rx="5"/>
+<text class="bt" x="1146" y="360">MODERATE · early + late</text>
+<text class="bb" x="1146" y="382">both: spoken prompt stating the reason, on the chosen channel</text>
+<path class="ar" d="M1330 396 L1330 416"/>
+
+<rect class="sev" x="1128" y="418" width="404" height="76" rx="5"/>
+<text class="bt" x="1146" y="440">SEVERE · late, sustained</text>
+<text class="bb" x="1146" y="462">truck: loud alarm, repeated until acknowledged</text>
+<text class="bb" x="1146" y="482">ambulance: private voice + notify the crew member in back</text>
+<path class="ar" d="M1330 494 L1330 514"/>
+
+<rect class="proc" x="1128" y="516" width="404" height="76" rx="5"/>
+<text class="bt" x="1146" y="538">THE TRUCK ESCALATES INTENSITY</text>
+<text class="bt" x="1146" y="558">THE AMBULANCE ESCALATES RECIPIENT</text>
+<text class="bb" x="1146" y="580">Existing systems escalate on one axis. Which axis depends on the cabin.</text>
+
+<rect class="dec" x="1128" y="606" width="404" height="74" rx="5"/>
+<text class="bt" x="1146" y="628">Default when nobody set it</text>
+<text class="bb" x="1146" y="650">Private channel, but never suppress SEVERE — only redirect it. With</text>
+<text class="bb" x="1146" y="668">no second person, fall back to cabin audio and announce it.</text>
+
+<path class="big" d="M1330 698 L1330 716 L790 716 L790 736"/>
+
+<rect class="panel" x="520" y="736" width="540" height="166" rx="8"/>
+<text class="ph" x="538" y="764">AFTER THE SHIFT</text>
+<text class="pn" x="688" y="764">shift report · sheet D</text>
+
+<rect class="data" x="548" y="778" width="484" height="32" rx="5"/>
+<text class="bb" x="790" y="799" text-anchor="middle">session_log.csv — one row every 3 seconds</text>
+
+<path class="ar" d="M790 810 L790 820 L670 820 L670 838"/>
+<path class="ar" d="M790 810 L790 820 L910 820 L910 838"/>
+
+<rect class="new" x="560" y="840" width="220" height="50" rx="5"/>
+<text class="bt" x="670" y="860" text-anchor="middle">DRIVER'S PAGE</text>
+<text class="bb" x="670" y="878" text-anchor="middle">trend, worst stretch, lead time</text>
+
+<rect class="mod" x="800" y="840" width="220" height="50" rx="5"/>
+<text class="bt" x="910" y="860" text-anchor="middle">DEPOT'S PAGE</text>
+<text class="bb" x="910" y="878" text-anchor="middle">events by slot and route</text>
+
+<path class="big" d="M520 840 L496 840 L496 290 L480 290"/>
+<text class="al" x="300" y="722">history feeds the next pre-trip check</text>
+
+<rect class="note" x="40" y="736" width="440" height="354" rx="8"/>
+<text class="nh" x="60" y="762">What is new here</text>
+<text class="nt" x="60" y="786">Compensatory behaviour. Every system measures symptoms of</text>
+<text class="nt" x="60" y="804">falling asleep. Those are late. We measure the fight against it</text>
+<text class="nt" x="60" y="822">— eye-rubbing, head shakes, blinks reopening slowly — which</text>
+<text class="nt" x="60" y="840">happens first and needs no new sensor.</text>
+<text class="nt" x="60" y="864">Earliness as the metric. Two methods can score identically on</text>
+<text class="nt" x="60" y="882">accuracy while one warns 47 seconds sooner. For a safety system</text>
+<text class="nt" x="60" y="900">that is the whole difference.</text>
+<text class="nt" x="60" y="924">Two-axis escalation. When you cannot get louder, escalate the</text>
+<text class="nt" x="60" y="942">recipient. A paramedic glancing at their phone beats any noise,</text>
+<text class="nt" x="60" y="960">and it is silent to the patient.</text>
+<text class="nt" x="60" y="984">No enrolment assumption. An adaptive running baseline works for</text>
+<text class="nt" x="60" y="1002">the driver who starts the shift already tired — exactly the</text>
+<text class="nt" x="60" y="1020">person a 60-second alert baseline gets wrong.</text>
+<text class="nt" x="60" y="1044">Three outputs, not one alarm. Most projects build only the</text>
+<text class="nt" x="60" y="1062">middle box and stop there.</text>
+
+<rect class="note" x="1100" y="736" width="460" height="354" rx="8"/>
+<text class="nh" x="1120" y="762">Future scope — hardware</text>
+<text class="nt" x="1120" y="786">Everything above runs on software alone. These three need parts,</text>
+<text class="nt" x="1120" y="804">so they are scoped as future work rather than cut.</text>
+
+<rect class="fut" x="1120" y="816" width="420" height="52" rx="5"/>
+<text class="bt" x="1136" y="836">Bone-conduction headset</text>
+<text class="bb" x="1136" y="856">Ears stay open, so sirens and ambient sound are still heard.</text>
+
+<rect class="fut" x="1120" y="874" width="420" height="52" rx="5"/>
+<text class="bt" x="1136" y="894">Single Bluetooth earpiece</text>
+<text class="bb" x="1136" y="914">Cheap and private, but it must be worn — a compliance dependency.</text>
+
+<rect class="fut" x="1120" y="932" width="420" height="52" rx="5"/>
+<text class="bt" x="1136" y="952">Seat or steering vibration</text>
+<text class="bb" x="1136" y="972">Independent of cabin acoustics, nothing to wear. ESP32, ~₹500.</text>
+
+<text class="nh" x="1120" y="1012">Also future work</text>
+<text class="nt" x="1120" y="1036">Vehicle-trajectory fusion — no public dataset has synchronised</text>
+<text class="nt" x="1120" y="1054">video and telemetry with drowsiness labels. Automatic occupancy</text>
+<text class="nt" x="1120" y="1072">detection. Validating the depot findings on real fleet data.</text>
+
+<line x1="40" y1="1104" x2="1560" y2="1104" stroke="#B4B2A9" stroke-width="1"/>
+<text class="al" x="40" y="1122">Complete system overview · phone-deployable driver fatigue monitoring · A3 landscape · sheets A, C, D, E and pre-trip expand each stage</text>
+</svg>
