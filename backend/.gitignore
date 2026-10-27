@@ -5,9 +5,7 @@ videos/
 *.avi
 *.mov
 features*.csv
-# model files downloaded at first run
-models/*.task
-*.task
+# model files downloaded at first run (now tracked)
 # outputs
 runs/
 results/
@@ -16,4 +14,3 @@ __pycache__/
 *.egg-info/
 .pytest_cache/
 .venv/
-*.joblib

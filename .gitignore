@@ -8,6 +8,6 @@ backend/var/
 backend/data/
 backend/runs/
 backend/demo/
-*.joblib
+
 .env
 kaggle_rldd
